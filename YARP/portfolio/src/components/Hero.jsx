@@ -3,7 +3,7 @@
 import profilePic from '../assets/profilePic.jpg'
 import Link from './Link'
 
-function Hero() {
+const Hero = () => {
   return (
     
     <section className="hero divider">

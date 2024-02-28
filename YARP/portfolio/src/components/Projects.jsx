@@ -4,6 +4,7 @@ import svgAnimations from '../assets/svg-animations.png';
 import Project from './Project'
 
 
+// project list array
 const projectList = [
     {
       id: 1,
@@ -31,7 +32,7 @@ const projectList = [
       title: 'SVG Animations',
       tech: ['HTML', 'CSS'],
       description:
-        'I learnt to create SVG animations using CSS. I also got to implement more advanced CSS techniques like clip-path and keyframes. I had also struggled with media queries before, but this project really helped!',
+        'I have learned to create SVG animations using CSS. I also got to implement more advanced CSS techniques like clip-path and keyframes. I had also struggled with media queries before, but this project really helped!',
       liveLink: '#',
       githubLink: '#',
       image: svgAnimations,
@@ -39,22 +40,16 @@ const projectList = [
   ];
 
   const Projects = () => {
-
     return (
-
         <section id='projects' className='divider'>
-
-            <h2>Projects</h2>
-
-            <div>
-                {projectList.map((project) => (
-                    <Project key={project.id} data={project} />
-                ))}
-            </div>
-
+          <h2>Projects</h2>
+          <div>
+            {projectList.map((project, i) => (
+              <Project key={project.id} data={project} reverse={i % 2 === 0} />
+            ))}
+          </div>
         </section>
     );
-
   };
 
     export default Projects;

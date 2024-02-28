@@ -1,27 +1,40 @@
-
+import { useState } from "react";
 import menu from "../assets/open_menu.svg";
+import close from "../assets/close_menu.svg";
 
-function Header() {
+const Header = () => {
+
+  // State to manage the open/close state of the hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-
     <header>
-        <span>Gary M.</span>
+      <span>Gary M.</span>
 
-        <button className="menu-btn">
-        <img src={menu} alt="menu" />    
-        </button>
+      <button
+        className="menu-btn"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Navigation Menu"
+        aria-expanded={isOpen}
+      >
+        <img src={isOpen? close : menu} alt="menu" />
+      </button>
 
-        <nav className="nav">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-
+      <nav className={`nav ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
-}
+};
 
 export default Header;

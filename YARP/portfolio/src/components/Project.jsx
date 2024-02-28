@@ -1,10 +1,10 @@
-
+import { PropTypes } from 'prop-types';
 import Link from './Link';
 
-const Project = ( { data } ) => {
+const Project = ( { data, reverse } ) => {
   return (
     
-    <article className="project">
+    <article className="project" style={{flexDirection: reverse ? 'row-reverse' : 'row'}}>
 
         <div className="image">
             <img src={data.image} alt={data.title} />
@@ -37,3 +37,18 @@ const Project = ( { data } ) => {
 }
 
 export default Project
+
+
+// setting the prop types for the Project component to circumvent the prop types error
+Project.propTypes = {
+    data: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        tech: PropTypes.arrayOf(PropTypes.string).isRequired,
+        description: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        liveLink: PropTypes.string.isRequired,
+        githubLink: PropTypes.string.isRequired
+    }),
+    reverse: PropTypes.bool.isrequired
+}   
