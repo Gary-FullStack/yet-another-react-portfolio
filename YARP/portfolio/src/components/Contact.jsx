@@ -4,9 +4,9 @@ import { Icons } from './Icons';
 const Contact = () => {
   return (
     
-        <section className="contsct" id="contact">
+        <section className="contact" id="contact">
 
-            <h2>Contact</h2>
+            
             <p>Lets get to work ... Contact me here.</p>
 
             <div className="socials-container">
@@ -24,9 +24,6 @@ const Contact = () => {
             </div>
 
         </section>
-
-
-
   )
 }
 
