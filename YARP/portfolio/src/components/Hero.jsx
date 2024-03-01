@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="">
 
             <h1>Hi, I'm Gary</h1>
-            <p>Full-Stack Developer</p>
+            <p>Full Stack Developer</p>
             <p>RTP, North Carolina</p>
             <Link href="#projects" className="btn">Here's Some of work</Link>
 
